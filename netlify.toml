@@ -14,9 +14,26 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Old URL → New URL redirects (301 = permanent, preserves SEO)
+# ── 301 redirects — old URL → new URL (preserves SEO) ──────────────────────
+
+# Room booking
 [[redirects]]
   from = "/room-booking/"
+  to = "/room-hire/"
+  status = 301
+
+[[redirects]]
+  from = "/room-booking/rooms/"
+  to = "/room-hire/"
+  status = 301
+
+[[redirects]]
+  from = "/room-booking/catering/"
+  to = "/room-hire/"
+  status = 301
+
+[[redirects]]
+  from = "/room-booking/conferences/"
   to = "/room-hire/"
   status = 301
 
@@ -25,8 +42,29 @@
   to = "/room-hire/"
   status = 301
 
+# Community centre
 [[redirects]]
   from = "/communitycentre/"
+  to = "/community-centre/"
+  status = 301
+
+[[redirects]]
+  from = "/communitycentre/cafe/"
+  to = "/community-centre/cafe/"
+  status = 301
+
+[[redirects]]
+  from = "/centre/cafe/"
+  to = "/community-centre/cafe/"
+  status = 301
+
+[[redirects]]
+  from = "/communitycentre/facilities/"
+  to = "/community-centre/"
+  status = 301
+
+[[redirects]]
+  from = "/communitycentre/groups/"
   to = "/community-centre/"
   status = 301
 
@@ -35,16 +73,52 @@
   to = "/community-centre/"
   status = 301
 
+# Church sub-pages not yet built
+[[redirects]]
+  from = "/church/hubs/youth-and-children/"
+  to = "/church/hubs/"
+  status = 301
+
+[[redirects]]
+  from = "/church/leadership/"
+  to = "/church/"
+  status = 301
+
+[[redirects]]
+  from = "/church/our-story/"
+  to = "/church/"
+  status = 301
+
+# Contact
+[[redirects]]
+  from = "/contact-us/"
+  to = "/contact/"
+  status = 301
+
+# Services
 [[redirects]]
   from = "/services/"
   to = "/church/services/"
   status = 301
 
+# Helpful services sub-pages
+[[redirects]]
+  from = "/helpful-services/mental-health/"
+  to = "/helpful-services/"
+  status = 301
+
+[[redirects]]
+  from = "/helpful-services/*"
+  to = "/helpful-services/"
+  status = 301
+
+# Building project (no equivalent — send to home)
 [[redirects]]
   from = "/building-project/"
   to = "/"
   status = 301
 
+# 404 fallback
 [[redirects]]
   from = "/*"
   to = "/404.html"
