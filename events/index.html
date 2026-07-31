@@ -269,10 +269,8 @@
       var d = new Date(e.starts_at);
       var cat = e.category_id && categories[e.category_id];
       var loc = e.location && (e.location.name || e.location.address);
-      var delay = ['', 'd1', 'd2'][i % 3];
-
       var card = document.createElement('a');
-      card.className = 'ecard reveal' + (delay ? ' ' + delay : '');
+      card.className = 'ecard';
       card.href = e.url || '#';
       card.target = '_blank';
       card.rel = 'noopener';
