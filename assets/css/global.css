@@ -716,17 +716,16 @@ nav.main .has-drop > a::after { display: none; }
    ============================================================ */
 
 .hero {
-  background: var(--color-dark);
-  color: #fff;
+  background: var(--color-bg);
+  color: var(--color-text);
   position: relative;
-  /* overflow: visible so dropdown menus inside .site-head.on-dark can escape */
+  /* overflow: visible so dropdown menus inside .site-head can escape */
   overflow: visible;
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
 /* Visual children clip themselves to the hero boundary */
 .hero-photo,
-.hero .sparkle,
-#hero-canvas {
+.hero .sparkle {
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   overflow: hidden;
 }
@@ -817,8 +816,8 @@ nav.main .has-drop > a::after { display: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(45,38,239,0.82) 0%, rgba(135,71,254,0.65) 45%, rgba(22,12,75,0.72) 100%),
-    url('/assets/img/hero-banner.jpg') 60% 12% / cover no-repeat;
+    linear-gradient(to right, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.45) 35%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%),
+    url('/assets/img/davinci_edit_image_1785505076231.png') center / cover no-repeat;
   border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   z-index: 0;
 }
@@ -835,7 +834,8 @@ nav.main .has-drop > a::after { display: none; }
 .hero h1 {
   font-size: var(--text-6xl);
   letter-spacing: var(--tracking-tightest);
-  color: #fff;
+  color: #170c4d;
+  text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,1), 0 1px 4px rgba(255,255,255,0.9);
 }
 
 .hero .lead {
@@ -844,7 +844,8 @@ nav.main .has-drop > a::after { display: none; }
   margin: var(--space-6) 0 var(--space-8);
   opacity: 0.92;
   font-weight: 400;
-  color: #fff;
+  color: #170c4d;
+  text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 12px rgba(255,255,255,1), 0 1px 4px rgba(255,255,255,0.9);
 }
 
 .hero .cta {
