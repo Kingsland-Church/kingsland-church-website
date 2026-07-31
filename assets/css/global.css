@@ -1041,6 +1041,15 @@ html.js-anim .d3 { transition-delay: 240ms; }
 
 @media (max-width: 980px) {
   .hero-grid         { grid-template-columns: 1fr; }
+  .hero .lead {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-left: -14px;
+    text-shadow: none;
+  }
   .cluster           { display: none; }
   .cards.c3,
   .cards.c4,
