@@ -132,44 +132,167 @@
 <section class="band">
   <div class="wrap">
     <p class="label reveal">COMING UP</p>
-    <h2 class="reveal">Events this month.</h2>
-    <div class="ev" style="margin-top:var(--space-10);">
-      <a class="ecard reveal" href="/events/">
-        <span class="date"><span class="d">22</span><span class="mo">Jun</span></span>
-        <h3>Family Sunday</h3>
-        <p>Every age, all together, for one big celebration service.</p>
-      </a>
-      <a class="ecard reveal d1" href="/church/alpha/">
-        <span class="date"><span class="d">25</span><span class="mo">Jun</span></span>
-        <h3>Alpha taster evening</h3>
-        <p>Food, a short talk, and space to ask anything at all. No pressure.</p>
-      </a>
-      <a class="ecard reveal d2" href="/events/">
-        <span class="date"><span class="d">29</span><span class="mo">Jun</span></span>
-        <h3>Café Church</h3>
-        <p>A relaxed service around tables, with seriously good coffee.</p>
-      </a>
-      <a class="ecard reveal" href="/events/">
-        <span class="date"><span class="d">6</span><span class="mo">Jul</span></span>
-        <h3>Summer picnic</h3>
-        <p>Bring a blanket and the family — food, games, and good company.</p>
-      </a>
-      <a class="ecard reveal d1" href="/church/discipleship-groups/">
-        <span class="date"><span class="d">9</span><span class="mo">Jul</span></span>
-        <h3>Community groups restart</h3>
-        <p>Midweek small groups kicking off again after summer break.</p>
-      </a>
-      <a class="ecard reveal d2" href="/events/">
-        <span class="date"><span class="d">13</span><span class="mo">Jul</span></span>
-        <h3>Worship night</h3>
-        <p>An extended evening of sung worship — open to all.</p>
-      </a>
+    <h2 class="reveal">What's on at Kingsland.</h2>
+
+    <div id="ev-filters" style="display:flex;flex-wrap:wrap;gap:8px;margin:var(--space-8) 0 var(--space-6);"></div>
+
+    <div id="ev-grid" class="ev" style="margin-top:0;">
+      <div class="ecard ecard-skeleton"></div>
+      <div class="ecard ecard-skeleton"></div>
+      <div class="ecard ecard-skeleton"></div>
     </div>
-    <p class="cs-note reveal">
-      <span class="cs-pill">Live</span>&nbsp; Events pull from ChurchSuite and are always up to date.
+
+    <p id="ev-empty" style="display:none;color:var(--color-muted);text-align:center;padding:var(--space-12) 0;">No upcoming events found.</p>
+
+    <p class="cs-note" style="margin-top:var(--space-8);">
+      <span class="cs-pill">Live</span>&nbsp; Events are pulled live from ChurchSuite and always up to date.
     </p>
   </div>
 </section>
+
+<style>
+.ecard-skeleton {
+  background: linear-gradient(90deg, var(--color-surface) 25%, rgba(0,0,0,0.04) 50%, var(--color-surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  min-height: 160px;
+  pointer-events: none;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+.ev-cat-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.ev-cat-pill.active {
+  background: var(--color-dark);
+  color: #fff;
+  border-color: var(--color-dark);
+}
+.ecard-location {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ecard-signup {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-blue);
+  letter-spacing: 0.04em;
+}
+</style>
+
+<script>
+(function () {
+  var FEED = 'https://kingsland.churchsuite.com/-/calendar/648c4023-d07d-429d-abae-b704b657a686/json';
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  var $grid    = document.getElementById('ev-grid');
+  var $filters = document.getElementById('ev-filters');
+  var $empty   = document.getElementById('ev-empty');
+
+  var allEvents = [];
+  var categories = {};
+  var activeCategory = 'all';
+
+  fetch(FEED)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      (data.categories || []).forEach(function (c) { categories[c.id] = c; });
+
+      var now = Date.now();
+      allEvents = (data.events || [])
+        .filter(function (e) { return new Date(e.starts_at).getTime() >= now; })
+        .sort(function (a, b) { return new Date(a.starts_at) - new Date(b.starts_at); });
+
+      buildFilters();
+      renderEvents();
+    })
+    .catch(function () {
+      $grid.innerHTML = '<p style="color:var(--color-muted);grid-column:1/-1;padding:var(--space-8) 0;">Unable to load events right now. <a href="https://kingsland.churchsuite.com/events/" style="color:var(--color-blue);" target="_blank" rel="noopener">View on ChurchSuite →</a></p>';
+    });
+
+  function buildFilters() {
+    var usedCats = {};
+    allEvents.forEach(function (e) {
+      if (e.category_id && categories[e.category_id]) usedCats[e.category_id] = categories[e.category_id];
+    });
+
+    var allPill = document.createElement('button');
+    allPill.className = 'ev-cat-pill active';
+    allPill.textContent = 'All events';
+    allPill.onclick = function () { setFilter('all', allPill); };
+    $filters.appendChild(allPill);
+
+    Object.values(usedCats).forEach(function (cat) {
+      var pill = document.createElement('button');
+      pill.className = 'ev-cat-pill';
+      pill.textContent = cat.name;
+      pill.style.borderColor = cat.color;
+      pill.onclick = function () { setFilter(cat.id, pill); };
+      $filters.appendChild(pill);
+    });
+  }
+
+  function setFilter(catId, el) {
+    activeCategory = catId;
+    $filters.querySelectorAll('.ev-cat-pill').forEach(function (p) { p.classList.remove('active'); });
+    el.classList.add('active');
+    renderEvents();
+  }
+
+  function renderEvents() {
+    var filtered = activeCategory === 'all'
+      ? allEvents
+      : allEvents.filter(function (e) { return e.category_id == activeCategory; });
+
+    $grid.innerHTML = '';
+
+    if (!filtered.length) {
+      $empty.style.display = 'block';
+      return;
+    }
+    $empty.style.display = 'none';
+
+    filtered.forEach(function (e, i) {
+      var d = new Date(e.starts_at);
+      var cat = e.category_id && categories[e.category_id];
+      var loc = e.location && (e.location.name || e.location.address);
+      var delay = ['', 'd1', 'd2'][i % 3];
+
+      var card = document.createElement('a');
+      card.className = 'ecard reveal' + (delay ? ' ' + delay : '');
+      card.href = e.url || '#';
+      card.target = '_blank';
+      card.rel = 'noopener';
+
+      var catBadge = cat
+        ? '<span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.06em;color:' + cat.color + ';margin-bottom:6px;text-transform:uppercase;">' + cat.name + '</span><br>'
+        : '';
+
+      card.innerHTML =
+        '<span class="date"><span class="d">' + d.getDate() + '</span><span class="mo">' + MONTHS[d.getMonth()] + '</span></span>' +
+        catBadge +
+        '<h3>' + e.name + '</h3>' +
+        (loc ? '<p class="ecard-location">📍 ' + loc + '</p>' : '') +
+        (e.signup_enabled ? '<span class="ecard-signup">Sign up →</span>' : '');
+
+      $grid.appendChild(card);
+    });
+  }
+})();
+</script>
 
 <!-- Regular rhythms -->
 <section class="band alt">
