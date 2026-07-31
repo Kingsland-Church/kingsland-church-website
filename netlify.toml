@@ -73,20 +73,10 @@
   to = "/community-centre/"
   status = 301
 
-# Church sub-pages not yet built
+# Old WordPress URL for youth hub
 [[redirects]]
   from = "/church/hubs/youth-and-children/"
   to = "/church/hubs/"
-  status = 301
-
-[[redirects]]
-  from = "/church/leadership/"
-  to = "/church/"
-  status = 301
-
-[[redirects]]
-  from = "/church/our-story/"
-  to = "/church/"
   status = 301
 
 # Contact
