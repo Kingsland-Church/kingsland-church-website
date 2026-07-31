@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Kingsland Church, Colchester — Welcome</title>
+<meta name="description" content="A vibrant church and community centre in the heart of Colchester. Sundays 9:15am, 11am &amp; 6:30pm · Wednesday@1 at 1pm. Everyone welcome.">
+
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMkQyNkVGIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjODc0N0ZFIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9InVybCgjZykiLz48dGV4dCB4PSI1MCUiIHk9IjU0JSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZiI+SzwvdGV4dD48L3N2Zz4=">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/global.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<script>try { document.documentElement.classList.add('js-anim') } catch(e) {}</script>
+</head>
+<body>
+
+<!-- ============================================================
+     RIBBON
+     ============================================================ -->
+<div class="ribbon">
+  ✦ Sun 9:15, 11am &amp; 6:30pm · Wed 1pm (Wednesday@1) · 86 London Road, Colchester
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="hero">
+  <span class="glow" aria-hidden="true"></span>
+  <span class="glow2" aria-hidden="true"></span>
+  <span class="sparkle" aria-hidden="true"></span>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAV inside hero (on-dark) -->
+  <div class="site-head on-dark">
+    <div class="wrap">
+      <header class="topbar">
+        <a class="logo" href="/" aria-label="Kingsland Church — home">
+          Kingsland<span class="dot">.</span>
+        </a>
+
+        <nav class="main" aria-label="Primary navigation">
+          <div class="has-drop">
+          <a href="/church/" class="drop-trigger">Church <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="dropdown" role="menu">
+            <a href="/church/" role="menuitem">
+              <span class="drop-icon" style="background:#EEF0FF;">✝</span>
+              <span class="drop-label">Church overview<small>What we're about</small></span>
+            </a>
+            <a href="/church/hubs/" role="menuitem">
+              <span class="drop-icon" style="background:#FFF0FD;">★</span>
+              <span class="drop-label">Kids &amp; Youth<small>Groups every Sunday</small></span>
+            </a>
+            <a href="/church/alpha/" role="menuitem">
+              <span class="drop-icon" style="background:#EEF0FF;">?</span>
+              <span class="drop-label">Alpha<small>Explore life's big questions</small></span>
+            </a>
+            <a href="/church/discipleship-groups/" role="menuitem">
+              <span class="drop-icon" style="background:#EDFFF6;">♥</span>
+              <span class="drop-label">Community groups<small>Midweek small groups</small></span>
+            </a>
+            <div class="drop-divider"></div>
+            <a href="/church/services/" role="menuitem">
+              <span class="drop-icon" style="background:#F5EDFF;">▶</span>
+              <span class="drop-label">Watch &amp; Listen<small>Sermons &amp; podcast</small></span>
+            </a>
+          </div>
+        </div>
+          <div class="has-drop">
+          <a href="/community-centre/" class="drop-trigger">Community Centre <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+          <div class="dropdown" role="menu">
+            <a href="/community-centre/" role="menuitem">
+              <span class="drop-icon" style="background:#F5EDFF;">🏠</span>
+              <span class="drop-label">Community Centre<small>Everything we offer</small></span>
+            </a>
+            <a href="/community-centre/cafe/" role="menuitem">
+              <span class="drop-icon" style="background:#FFF6ED;">☕</span>
+              <span class="drop-label">The Café<small>Open Mon – Sat</small></span>
+            </a>
+            <div class="drop-divider"></div>
+            <a href="/room-hire/" role="menuitem">
+              <span class="drop-icon" style="background:#FFF0FD;">📋</span>
+              <span class="drop-label">Room hire<small>Spaces for your community</small></span>
+            </a>
+            <a href="/helpful-services/" role="menuitem">
+              <span class="drop-icon" style="background:#EDFFF6;">🤝</span>
+              <span class="drop-label">Helpful services<small>Support &amp; care</small></span>
+            </a>
+          </div>
+        </div>
+          <a href="/room-hire/">Room Hire</a>
+          <a href="/helpful-services/">Helpful</a>
+          <a href="/events/">Events</a>
+        </nav>
+
+        <div class="right">
+          <a class="give" href="/giving/">Giving</a>
+          <a class="btn btn-light" href="/im-new/">Plan your visit</a>
+        </div>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect y="4"  width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+      </header>
+
+            <nav class="mobile-nav" id="mnav" aria-label="Mobile navigation" hidden>
+        <div class="mnav-group">
+          <button class="mnav-toggle" aria-expanded="false" aria-controls="mnav-church">Church <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="mnav-sub" id="mnav-church" hidden>
+            <a href="/church/">Church overview</a>
+            <a href="/church/hubs/">Kids &amp; Youth</a>
+            <a href="/church/alpha/">Alpha</a>
+            <a href="/church/discipleship-groups/">Community groups</a>
+            <a href="/church/services/">Watch &amp; Listen</a>
+          </div>
+        </div>
+        <div class="mnav-group">
+          <button class="mnav-toggle" aria-expanded="false" aria-controls="mnav-centre">Community Centre <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="mnav-sub" id="mnav-centre" hidden>
+            <a href="/community-centre/">Community Centre</a>
+            <a href="/community-centre/cafe/">The Café</a>
+            <a href="/room-hire/">Room hire</a>
+            <a href="/helpful-services/">Helpful services</a>
+          </div>
+        </div>
+        <a href="/events/">Events</a>
+        <a href="/im-new/">Plan your visit</a>
+        <a href="/giving/">Giving</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Photo panel — right half, bleeds to edge -->
+  <div class="hero-photo" aria-hidden="true"></div>
+
+  <!-- HERO CONTENT -->
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal" style="color: rgba(255,255,255,0.65);">Colchester's community church</span>
+        <h1 class="reveal d1">Come as<br>you are.</h1>
+        <p class="lead reveal d2">
+          A warm, welcoming church family in the heart of Colchester —
+          with a seat saved just for you this Sunday.
+        </p>
+        <div class="cta reveal d3">
+          <a class="btn btn-light" href="/im-new/">Plan your visit</a>
+          <a class="btn btn-outline" href="#catchup">Watch a sermon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /hero -->
+
+
+<!-- ============================================================
+     FIRST STEPS — glass cards on white
+     ============================================================ -->
+<section class="band">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow reveal">First time?</span>
+      <h2 class="reveal d1">Three easy first steps</h2>
+      <p class="reveal d2">No pressure, no dress code, no prior knowledge needed.</p>
+    </div>
+    <div class="cards c3">
+      <a class="card link-card reveal" href="/im-new/">
+        <span class="chip" style="background: var(--color-blue);">→</span>
+        <h3>Plan a visit</h3>
+        <p>Times, parking and a friendly welcome team ready to meet you at the door.</p>
+        <span class="more">Plan a visit →</span>
+      </a>
+      <a class="card link-card reveal d1" href="/im-new/#what-to-expect">
+        <span class="chip" style="background: var(--color-purple);">?</span>
+        <h3>What to expect</h3>
+        <p>Real answers on how long, how loud, and what to wear. Spoiler: just be you.</p>
+        <span class="more">Read more →</span>
+      </a>
+      <a class="card link-card reveal d2" href="/church/hubs/">
+        <span class="chip" style="background: var(--color-pink); color: var(--color-dark);">★</span>
+        <h3>Bring the family</h3>
+        <p>Brilliant, safe groups for every age, running alongside our services.</p>
+        <span class="more">See groups →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MOVING CARDS — Life at Kingsland
+     ============================================================ -->
+<section class="hscroll band alt" id="hscroll" aria-label="Life at Kingsland">
+  <div class="pin">
+    <div class="label">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Life at Kingsland</span>
+          <h2>There's a place<br>for everyone</h2>
+        </div>
+        <span class="hint">scroll to explore →</span>
+      </div>
+    </div>
+    <div class="track" id="track" role="list">
+      <a class="hcard k1" href="/church/" role="listitem"><span class="tag">Sundays</span><h3>Gather &amp; worship</h3><p>9:15am, 11am &amp; 6:30pm Sundays · Wednesday@1 at 1pm midweek.</p></a>
+      <a class="hcard k2" href="/church/hubs/" role="listitem"><span class="tag">All ages</span><h3>Kids &amp; youth</h3><p>Safe, joyful groups running alongside our Sunday services.</p></a>
+      <a class="hcard k3" href="/community-centre/cafe/" role="listitem"><span class="tag">Midweek</span><h3>The Café</h3><p>A warm welcome, great coffee, and a place to belong.</p></a>
+      <a class="hcard k4" href="/church/discipleship-groups/" role="listitem"><span class="tag">Together</span><h3>Community groups</h3><p>Smaller groups across Colchester to grow friendship and faith.</p></a>
+      <a class="hcard k5" href="/church/alpha/" role="listitem"><span class="tag">Explore</span><h3>Alpha</h3><p>Space to ask life's big questions over food — no pressure.</p></a>
+      <a class="hcard k6" href="/church/services/" role="listitem"><span class="tag">Anytime</span><h3>Watch &amp; listen</h3><p>Latest sermon and podcast, always up to date online.</p></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CATCH UP — dark band
+     ============================================================ -->
+<section class="band" id="catchup">
+  <div class="dark-band">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow" style="color: var(--color-pink);">Watch &amp; listen</span>
+        <h2 style="color: #fff;">Catch up any time</h2>
+      </div>
+      <!-- Instagram feed -->
+      <div class="insta-block reveal" style="margin-bottom: var(--space-12);">
+        <div class="insta-head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span>@kingslandchurch</span>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-follow">Follow</a>
+        </div>
+        <div class="insta-grid">
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/worship.jpg')"></a>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/community.jpg')"></a>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/kids-youth.jpg')"></a>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/cafe.jpg')"></a>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/watch-listen.jpg')"></a>
+          <a href="https://instagram.com/kingslandchurch/" rel="noopener" class="insta-tile" style="background-image:url('/assets/img/hero-banner.jpg')"></a>
+        </div>
+      </div>
+
+      <div class="media">
+        <div class="vcard reveal">
+          <div class="thumb">
+            <span class="badge">Latest sermon</span>
+            <span class="play" aria-label="Play sermon">▶</span>
+          </div>
+          <div class="vbody">
+            <h3>The future of the Kingdom</h3>
+            <p>Always the newest video from our sermons playlist.</p>
+            <a class="yt" href="https://www.youtube.com/user/KingslandColchester" rel="noopener">▶ Watch on YouTube →</a>
+          </div>
+        </div>
+        <div class="pcard reveal d1">
+          <span class="ptag">Podcast</span>
+          <h3>Latest episode</h3>
+          <div class="pep">
+            <span class="art"></span>
+            <span class="m"><strong>This week's episode</strong><span>Updates automatically · 38 min</span></span>
+          </div>
+          <div class="pep">
+            <span class="art"></span>
+            <span class="m"><strong>Last week's episode</strong><span>32 min</span></span>
+          </div>
+          <div class="listen">
+            <a href="https://open.spotify.com" rel="noopener">▶ Open in Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SPLIT — Community Centre & Room Hire
+     ============================================================ -->
+<section class="band">
+  <div class="wrap">
+    <div class="split">
+      <div class="imgwrap">
+        <div class="img" id="parallax">Charter Hall — up to 200 seats</div>
+      </div>
+      <div class="copy">
+        <span class="eyebrow reveal">Community Centre &amp; Room Hire</span>
+        <h2 class="reveal d1">A space for the whole community</h2>
+        <p class="reveal d1">
+          Bright, affordable rooms in the centre of town — from the 200-seat
+          Charter Hall to cosy meeting rooms. Loved by community groups,
+          businesses and families.
+        </p>
+        <a class="btn btn-primary reveal d2" href="/room-hire/">Hire a space</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EVENTS
+     ============================================================ -->
+<section class="band alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">The diary</span>
+        <h2 class="reveal">What's on</h2>
+      </div>
+      <a class="link reveal" href="/events/" style="font-weight:600;color:var(--color-blue);font-size:var(--text-sm);">Full calendar →</a>
+    </div>
+
+    <div class="ev">
+      <a class="ecard reveal" href="/events/">
+        <span class="date"><span class="d">14</span><span class="mo">Jun</span></span>
+        <h3>Alpha taster</h3>
+        <p>Food, a short talk, and space to ask anything at all.</p>
+      </a>
+      <a class="ecard reveal d1" href="/events/">
+        <span class="date"><span class="d">18</span><span class="mo">Jun</span></span>
+        <h3>Café Church</h3>
+        <p>A relaxed service around tables, with seriously good coffee.</p>
+      </a>
+      <a class="ecard reveal d2" href="/events/">
+        <span class="date"><span class="d">22</span><span class="mo">Jun</span></span>
+        <h3>Family Sunday</h3>
+        <p>Every age, all together, for one big celebration.</p>
+      </a>
+    </div>
+
+    <p class="cs-note reveal">
+      <span class="cs-pill">ChurchSuite</span>&nbsp; Live events — always up to date.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="/">Kingsland<span class="dot" style="color:var(--color-pink);">.</span></a>
+        <p>A church and community centre in the heart of Colchester. Everyone welcome.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <a href="/im-new/">Plan your visit</a>
+        <a href="/im-new/#what-to-expect">What to expect</a>
+        <a href="/contact/">Find us</a>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <a href="/church/hubs/">Groups</a>
+        <a href="/church/alpha/">Alpha</a>
+        <a href="/giving/">Giving</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://www.youtube.com/user/KingslandColchester" rel="noopener">YouTube</a>
+        <a href="https://open.spotify.com" rel="noopener">Spotify</a>
+        <a href="https://instagram.com/kingslandchurch/" rel="noopener">Instagram</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Kingsland Church, Colchester · Charity No. 1127055</span>
+      <span>86 London Road, CO3 9DW · 01206 508948</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     MOVING CARDS — inline styles (component-specific)
+     These move to components.css in Phase 3
+     ============================================================ -->
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="assets/js/hero-particles.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

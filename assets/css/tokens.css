@@ -1,0 +1,324 @@
+/*
+ * Kingsland Church — Design Tokens
+ * tokens.css — single source of truth for all CSS custom properties.
+ * Palette: matches the approved prototype (blue/pink/purple/dark).
+ *
+ * FONT PAIRING: Fraunces (display) + Plus Jakarta Sans (body)
+ * Fraunces is a quirky optical-size serif with warmth and literary
+ * personality. Plus Jakarta Sans is a friendlier, more humanist
+ * alternative to Inter — open counters, gentler curves, pairs
+ * cleanly with Fraunces without competing.
+ *
+ * Google Fonts @import lives in global.css, not here.
+ */
+
+html {
+
+  /* ============================================================
+     1. COLOUR — BRAND PRIMITIVES (from approved prototype)
+     ============================================================ */
+
+  --color-blue:        #2D26EF;   /* Primary — electric cobalt. Hero, CTAs, links */
+  --color-pink:        #FF5DEF;   /* Secondary — vivid pink. Accents, hover states */
+  --color-purple:      #8747FE;   /* Tertiary — rich violet. Supporting accent */
+  --color-blue-l:      #088FFE;   /* Light blue — used in gradients and split images */
+  --color-green:       #03A6CE;   /* Teal — success states, fourth accent */
+  --color-dark:        #160C4B;   /* Near-black indigo — footer, dark sections */
+  --color-yellow:      #FEEDBA;   /* Soft gold — announcement ribbons, warm highlights */
+  --color-accent:      #482D70;   /* Deep purple — eyebrow text on warm bg */
+  --color-warm:        #FFF8EC;   /* Cream — ribbon background */
+
+
+  /* ============================================================
+     2. COLOUR — BLUE SCALE (900 → 50)
+     ============================================================ */
+
+  --blue-900:   #070560;
+  --blue-800:   #100DA0;
+  --blue-700:   #1C18CC;
+  --blue-600:   #2520E0;
+  --blue-500:   #2D26EF;   /* brand blue */
+  --blue-400:   #5550F3;
+  --blue-300:   #7E7AF6;
+  --blue-200:   #ABA8FA;
+  --blue-100:   #D3D1FC;
+  --blue-50:    #EEEEFE;
+
+
+  /* ============================================================
+     3. COLOUR — PINK SCALE (700 → 50)
+     ============================================================ */
+
+  --pink-700:   #B5009C;
+  --pink-600:   #D800BC;
+  --pink-500:   #F020DC;
+  --pink-400:   #FF5DEF;   /* brand pink */
+  --pink-300:   #FF87F4;
+  --pink-200:   #FFB3F9;
+  --pink-100:   #FFD8FC;
+  --pink-50:    #FFECFE;
+
+
+  /* ============================================================
+     4. COLOUR — PURPLE SCALE (700 → 50)
+     ============================================================ */
+
+  --purple-700: #4600C8;
+  --purple-600: #6220E8;
+  --purple-500: #7634F6;
+  --purple-400: #8747FE;   /* brand purple */
+  --purple-300: #A470FE;
+  --purple-200: #C4A2FF;
+  --purple-100: #E0CEFE;
+  --purple-50:  #F0E7FF;
+
+
+  /* ============================================================
+     5. COLOUR — DARK / INDIGO SCALE
+     ============================================================ */
+
+  --dark-900:   #060320;
+  --dark-800:   #0A0635;
+  --dark-700:   #0E0840;
+  --dark-600:   #130A48;
+  --dark-500:   #160C4B;   /* brand dark — footer, dark sections */
+  --dark-400:   #2B1880;
+  --dark-300:   #482D70;   /* = --color-accent */
+  --dark-200:   #7A68A8;
+  --dark-100:   #B4A8D8;
+  --dark-50:    #EAE7F4;
+
+
+  /* ============================================================
+     6. COLOUR — NEUTRALS
+     ============================================================ */
+
+  --color-ink:         #16131F;   /* near-black body text */
+  --color-muted:       #6C6A78;   /* secondary / caption text */
+  --color-line:        #EBE9F1;   /* hairline borders */
+  --color-line-2:      #DED9E8;   /* slightly stronger border */
+  --color-bg:          #FFFFFF;   /* page background */
+  --color-bg-2:        #F7F7FB;   /* alternate / card background */
+  --color-white:       #FFFFFF;
+
+
+  /* ============================================================
+     7. COLOUR — SEMANTIC TOKENS
+     ============================================================ */
+
+  --color-text:           var(--color-ink);
+  --color-text-muted:     var(--color-muted);
+  --color-text-on-dark:   var(--color-white);
+  --color-text-link:      var(--color-blue);
+
+  --color-surface:        var(--color-bg);
+  --color-surface-alt:    var(--color-bg-2);
+  --color-surface-dark:   var(--color-dark);
+
+  --color-border:         var(--color-line);
+  --color-border-strong:  var(--color-line-2);
+
+
+  /* ============================================================
+     8. COLOUR — STATE TOKENS
+     ============================================================ */
+
+  --color-focus:          var(--color-blue);
+  --color-hover:          var(--blue-600);
+  --color-active:         var(--blue-700);
+  --color-error:          #D94040;
+  --color-error-light:    #FDEAEA;
+  --color-success:        var(--color-green);
+  --color-success-light:  #E0F6FA;
+  --color-warning:        #E5A82E;
+  --color-warning-light:  #FEF8EC;
+
+
+  /* ============================================================
+     9. COLOUR — GRADIENTS
+     ============================================================ */
+
+  --grad-hero:     linear-gradient(135deg, #2D26EF 0%, #5B35E6 48%, #8747FE 100%);
+  --grad-blue:     linear-gradient(135deg, #088FFE, #8747FE);
+  --grad-purple:   linear-gradient(135deg, #2D26EF, #8747FE);
+  --grad-pink:     linear-gradient(135deg, #8747FE, #FF5DEF);
+  --grad-teal:     linear-gradient(135deg, #088FFE, #03A6CE);
+
+  /* Moving card gradients (matching prototype .hcard.k1–k6) */
+  --grad-hcard-1:  linear-gradient(150deg, #2D26EF, #5B35E6);
+  --grad-hcard-2:  linear-gradient(150deg, #6E37E8, #8747FE);
+  --grad-hcard-3:  linear-gradient(150deg, #B23BE0, #FF5DEF);
+  --grad-hcard-4:  linear-gradient(150deg, #088FFE, #03A6CE);
+  --grad-hcard-5:  linear-gradient(150deg, #1B1147, #160C4B);
+  --grad-hcard-6:  linear-gradient(150deg, #5B35E6, #088FFE);
+
+
+  /* ============================================================
+     10. TYPOGRAPHY — FONT FAMILIES
+     System font stack — SF Pro on Apple devices (the real thing),
+     Inter as the cross-platform fallback. Inter was built to match
+     SF Pro's proportions and optical metrics exactly.
+     Apple uses: SF Pro Display (headings, -1.2px tracking at 80px)
+                 SF Pro Text (body, 17px / 25px line-height)
+     @import Inter in global.css:
+     https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+     ============================================================ */
+
+  --font-display:  'Syne', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  --font-body:     -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  --font-mono:     'SF Mono', 'JetBrains Mono', 'Fira Code', 'Menlo', monospace;
+
+
+  /* ============================================================
+     11. TYPOGRAPHY — FLUID TYPE SCALE
+     clamp(min, preferred, max) across 375px → 1440px viewport.
+     ============================================================ */
+
+  --text-xs:    clamp(0.694rem,  0.67rem  + 0.12vw, 0.75rem);
+  --text-sm:    clamp(0.833rem,  0.80rem  + 0.17vw, 0.875rem);
+  --text-base:  clamp(1rem,      0.96rem  + 0.20vw, 1.0625rem);
+  --text-lg:    clamp(1.125rem,  1.08rem  + 0.23vw, 1.3125rem);
+  --text-xl:    clamp(1.25rem,   1.18rem  + 0.35vw, 1.5rem);
+  --text-2xl:   clamp(1.5rem,    1.38rem  + 0.61vw, 1.875rem);
+  --text-3xl:   clamp(1.875rem,  1.65rem  + 1.13vw, 2.5rem);
+  --text-4xl:   clamp(2.25rem,   1.90rem  + 1.77vw, 3.25rem);
+  --text-5xl:   clamp(2.75rem,   2.18rem  + 2.85vw, 4.25rem);
+  --text-6xl:   clamp(3.25rem,   2.45rem  + 4.02vw, 5.5rem);
+
+
+  /* ============================================================
+     12. TYPOGRAPHY — LINE HEIGHT & LETTER SPACING
+     ============================================================ */
+
+  --leading-tight:    1.08;
+  --leading-snug:     1.35;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.7;
+  --leading-loose:    2;
+
+  --tracking-tightest: -0.035em;
+  --tracking-tight:    -0.025em;
+  --tracking-snug:     -0.015em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.02em;
+  --tracking-widest:    0.06em;
+
+
+  /* ============================================================
+     13. SPACING — 4px base unit
+     ============================================================ */
+
+  --space-px:   1px;
+  --space-1:    0.25rem;    /*  4px */
+  --space-2:    0.5rem;     /*  8px */
+  --space-3:    0.75rem;    /* 12px */
+  --space-4:    1rem;       /* 16px */
+  --space-5:    1.25rem;    /* 20px */
+  --space-6:    1.5rem;     /* 24px */
+  --space-7:    1.75rem;    /* 28px */
+  --space-8:    2rem;       /* 32px */
+  --space-10:   2.5rem;     /* 40px */
+  --space-12:   3rem;       /* 48px */
+  --space-14:   3.5rem;     /* 56px */
+  --space-16:   4rem;       /* 64px */
+  --space-18:   4.5rem;     /* 72px */
+  --space-20:   5rem;       /* 80px */
+  --space-24:   6rem;       /* 96px */
+  --space-28:   7rem;       /* 112px */
+  --space-32:   8rem;       /* 128px */
+
+
+  /* ============================================================
+     14. SHAPE — BORDER RADIUS (matching prototype values)
+     ============================================================ */
+
+  --radius-sm:    14px;   /* = prototype --r-sm */
+  --radius-md:    22px;   /* = prototype --r    */
+  --radius-lg:    30px;   /* = prototype --r-lg */
+  --radius-xl:    36px;   /* hero bottom corners */
+  --radius-full:  9999px; /* pills, tags */
+
+
+  /* ============================================================
+     15. SHAPE — SHADOWS (purple-tinted, matching brand depth)
+     ============================================================ */
+
+  --shadow-sm:   0 1px 3px rgba(22, 12, 75, 0.08),
+                 0 1px 2px rgba(22, 12, 75, 0.05);
+
+  --shadow-md:   0 4px 12px rgba(22, 12, 75, 0.10),
+                 0 2px 6px  rgba(22, 12, 75, 0.06);
+
+  --shadow-lg:   0 10px 30px rgba(22, 12, 75, 0.13),
+                 0 4px  12px rgba(22, 12, 75, 0.07);
+
+  --shadow-xl:   0 20px 60px rgba(22, 12, 75, 0.18),
+                 0 8px  24px rgba(22, 12, 75, 0.10);
+
+  --shadow-float: 0 26px 60px -24px rgba(22, 12, 75, 0.55);   /* floating cards */
+  --shadow-card:  0 26px 50px -28px rgba(22, 12, 75, 0.40);   /* card hover */
+  --shadow-hcard: 0 30px 60px -30px rgba(22, 12, 75, 0.50);   /* moving cards */
+
+
+  /* ============================================================
+     16. MOTION — DURATION
+     ============================================================ */
+
+  --duration-fast:     150ms;
+  --duration-base:     250ms;
+  --duration-moderate: 350ms;
+  --duration-slow:     500ms;
+  --duration-slower:   800ms;
+
+
+  /* ============================================================
+     17. MOTION — EASING
+     ============================================================ */
+
+  --ease-out:     cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-in:      cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-in-out:  cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1.0);
+  --ease-reveal:  cubic-bezier(0.2, 0.7, 0.2, 1.0);
+
+
+  /* ============================================================
+     18. MOTION — COMPOSITE TRANSITIONS
+     ============================================================ */
+
+  --transition-base:   var(--duration-base) var(--ease-out);
+  --transition-fast:   var(--duration-fast) var(--ease-out);
+  --transition-spring: var(--duration-moderate) var(--ease-spring);
+  --transition-reveal: opacity 0.8s var(--ease-reveal), transform 0.8s var(--ease-reveal);
+
+  --transition-card:   transform var(--duration-base) var(--ease-spring),
+                       box-shadow var(--duration-base) var(--ease-out),
+                       border-color var(--duration-base) var(--ease-out);
+
+  --transition-btn:    background-color var(--duration-fast) var(--ease-out),
+                       transform var(--duration-fast) var(--ease-spring);
+
+
+  /* ============================================================
+     19. Z-INDEX — LAYERING SCALE
+     ============================================================ */
+
+  --z-below:   -1;
+  --z-base:     0;
+  --z-above:   10;
+  --z-sticky:  20;
+  --z-nav:     50;
+  --z-drawer:  60;
+  --z-modal:  100;
+  --z-toast:  200;
+  --z-cursor: 999;
+
+
+  /* ============================================================
+     20. LAYOUT
+     ============================================================ */
+
+  --maxw:        1180px;   /* matches prototype --maxw */
+  --gutter:      clamp(var(--space-6), 5vw, var(--space-16));
+  --section-pad: clamp(var(--space-16), 8vw, var(--space-24));
+}
