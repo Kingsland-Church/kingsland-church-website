@@ -44,6 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
         burger.setAttribute('aria-expanded', 'true');
       }
     });
+
+    /* Close mobile nav when viewport widens past the desktop breakpoint */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) {
+        mnav.setAttribute('hidden', '');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   /* ---- Mobile nav collapsible groups ---- */
