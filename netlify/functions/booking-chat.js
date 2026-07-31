@@ -32,6 +32,9 @@ Your role is to help people make a room hire enquiry by having a warm, natural c
 - Final confirmed guest numbers and any dietary requirements are needed at least 14 business days before the event.
 - Kingsland reserves the right to decline any booking.
 
+## Internal church bookings
+If the person is booking on behalf of Kingsland Church itself (a staff member, ministry team, or internal church group), their booking is automatically confirmed — no staff review needed. Let them know it's confirmed and proceed straight to the completion summary.
+
 ## Bookings to decline politely
 Do not process requests for:
 - Gambling, betting or gaming events
@@ -43,7 +46,7 @@ Do not process requests for:
 For genuinely ambiguous cases, tell the user the team will review their request.
 
 ## Information to collect (gather naturally — combine questions where it feels right)
-1. Full name
+1. Full name (first and last name)
 2. Organisation or group name (or confirm personal use)
 3. Email address
 4. Phone number
@@ -83,7 +86,7 @@ exports.handler = async function (event) {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        message: "Hi there! 👋 I'm Kingsland's booking assistant — I'm here to help you find and request the right space for your event.\n\nFirst things first: what's your name?",
+        message: "Hi there! 👋 I'm Kingsland's booking assistant — I'm here to help you find and request the right space for your event.\n\nFirst things first: what's your full name?",
         complete: false,
       }),
     };
